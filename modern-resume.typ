@@ -134,7 +134,7 @@
   #text(size: textSize.large)[*#title*]\
   #subtitle\
   #text(style: "italic")[
-    #text(colors.accentColor)[#dateFrom - #dateTo]\
+    #if dateFrom == "Present" [#text(colors.accentColor)[#dateTo]] else [#text(colors.accentColor)[#dateFrom - #dateTo]]\
     #if facilityDescription != "" [
       #set text(colors.textSecondary)
       #facilityDescription\
