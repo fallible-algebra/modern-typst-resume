@@ -128,18 +128,19 @@
   subtitle: "",
   facilityDescription: "",
   taskDescription: "",
-  dateFrom: "Present",
+  dateFrom: "",
   dateTo: "Present",
-  taskDescriptionLabel: "Courses") = [
+  taskDescriptionLabel: "") = [
   #text(size: textSize.large)[*#title*]\
   #subtitle\
   #text(style: "italic")[
-    #if dateFrom == "Present" [#text(colors.accentColor)[#dateTo]] else [#text(colors.accentColor)[#dateFrom - #dateTo]]\
+    #if dateFrom == "" [#text(colors.accentColor)[#dateTo]] else [#text(colors.accentColor)[#dateFrom - #dateTo]]\
     #if facilityDescription != "" [
       #set text(colors.textSecondary)
       #facilityDescription\
     ]
-    #text(colors.accentColor)[#taskDescriptionLabel]\
+    #if taskDescriptionLabel != "" [#text(colors.accentColor)[#taskDescriptionLabel]\
+    ]
   ]
   #taskDescription
 ]
